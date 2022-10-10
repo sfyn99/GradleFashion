@@ -40,6 +40,8 @@
   <!-- Navbar End  -->
   @yield('addCategory')
   @yield('register')
+  @yield('login')
+
   @yield('addProduct')
   @yield('Category')
   @yield('Product')

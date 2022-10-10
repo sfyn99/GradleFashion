@@ -17,6 +17,7 @@ use App\Http\Controllers\AdminController;
 |
 */
 Route::get('register',[AdminController::class,'registerfunc']);
+Route::get('login',[AdminController::class,'loginfunc']);
 
 
 Route::get('addCategory',[CategoryController::class,'addCategoryfunc']);
@@ -36,4 +37,5 @@ Route::get('showProduct',[ProductController::class,'showProductfunc']);
 
 
 Route::post('doregister',[AdminController::class,'doregister']);
+Route::post('admin/auth',[AdminController::class,'auth'])->name('admin.auth');
 

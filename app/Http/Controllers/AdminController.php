@@ -39,7 +39,35 @@ class AdminController extends Controller
         return view('admin.register');
       
       }
-       
+      public function loginfunc() {
+
+        return view('admin.login');
+      
+      } 
+
+
+
+      public function auth(Request $req ){
+        $email = $req->post('email');
+        $password = $req->post('password');
+
+        $result= Admin::where(['email'=>$email,'password'=>$password])->get();
+        
+        if(isset($result['0']->id)){
+
+          $req->session()->put('Admin_login',true);
+          $req->session()->put('Admin_id',$result['0']->id);
+          return redirect('Dashboard');
+        }
+
+          else{
+              $req->session()->flash('error','invalid credentials');
+              return redirect('login');
+          }
+
+        
+
+      }
        
     }   
        
