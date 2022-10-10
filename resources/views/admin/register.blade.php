@@ -1,3 +1,4 @@
+@if($errors->any())
 <form action="doregister" method='POST'>
                             @csrf
                             <div class="group-input">
@@ -12,5 +13,14 @@
                                 <label for="con-pass">Password</label>
                                 <input name='password' placeholder='Enter Password' type="text" id="con-pass">
                             </div>
+                            <div class="group-input">
+                                <label for="con-pass">Password</label>
+                                <input name='confirm_password' placeholder='Confirm Password' type="text" id="con-pass">
+                            </div>
                             <button type="submit" class="site-btn register-btn">REGISTER</button>
                         </form>
+                    
+                        @foreach($errors->all() as $err)
+                    <div>{{$err}}</div>
+                        @endforeach
+                        @endif
