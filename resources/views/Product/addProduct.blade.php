@@ -1,3 +1,5 @@
+@extends('main.layout')
+@section('addProduct')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,3 +40,4 @@
     </div>
 </body>
 </html>
+@endsection

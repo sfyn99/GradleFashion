@@ -1,5 +1,6 @@
+@extends('main.layout')
 
-
+@section('Product')
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,5 +36,6 @@
 </table>
 </body>
 </html>
+@endsection
 
 

@@ -33,10 +33,15 @@ class AdminController extends Controller
         
         
         return redirect('register');
+      }}
+      public function registerfunc() {
+
+        return view('admin.register');
+      
       }
        
        
-       
+    }   
        
        
        
@@ -54,5 +59,5 @@ class AdminController extends Controller
       
 
 
-    }
-}
+    
+

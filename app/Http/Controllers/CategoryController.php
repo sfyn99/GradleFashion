@@ -16,6 +16,7 @@ class CategoryController extends Controller
 return view('addCategory');
 
 
+
    }
    public function addCategoryPostfunc(Request $r){
 

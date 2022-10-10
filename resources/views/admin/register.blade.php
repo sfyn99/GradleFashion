@@ -1,26 +1,39 @@
-@if($errors->any())
-<form action="doregister" method='POST'>
-                            @csrf
+@extends('main.layout')
+@section('register')
+
+                        <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+            <form action="doregister" method='POST'>
+            <h1 style="text-align:center;">Register</h1>                
+            @csrf
                             <div class="group-input">
-                                <label for="username">UserName</label>
-                                <input name='name' placeholder='Enter UserName' type="text" id="username">
+                                <br>
+                                <input name='name'class='form-control' placeholder='Enter UserName' type="text" id="username">
+                            </div>
+                           
+                            <div class="group-input">
+                            <br>
+                                <input name='email'class='form-control' placeholder='Enter Email' type="text" id="pass">
                             </div>
                             <div class="group-input">
-                                <label for="pass">Email</label>
-                                <input name='email' placeholder='Enter Email' type="text" id="pass">
-                            </div>
+                            <br>
+                                <input name='password'class='form-control' placeholder='Enter Password' type="text" id="con-pass">
+                            </div> <br>
                             <div class="group-input">
-                                <label for="con-pass">Password</label>
-                                <input name='password' placeholder='Enter Password' type="text" id="con-pass">
+                                <input name='confirm_password' class='form-control'placeholder='Confirm Password' type="text" id="con-pass">
                             </div>
-                            <div class="group-input">
-                                <label for="con-pass">Password</label>
-                                <input name='confirm_password' placeholder='Confirm Password' type="text" id="con-pass">
-                            </div>
-                            <button type="submit" class="site-btn register-btn">REGISTER</button>
+                            <br>
+                            <button type="submit"class='form-control btn btn-primary' class="site-btn register-btn">REGISTER</button>
                         </form>
-                    
+                        @if($errors->any())
                         @foreach($errors->all() as $err)
                     <div>{{$err}}</div>
                         @endforeach
                         @endif
+                        @endsection
+                      
+
+            </div>
+        </div>
+    </div>

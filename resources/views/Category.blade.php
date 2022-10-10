@@ -1,4 +1,4 @@
-@extends(main.layout)
+@extends('main.layout')
 @section('Category')
 <!DOCTYPE html>
 <html lang="en">
