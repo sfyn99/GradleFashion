@@ -45,6 +45,7 @@
   @yield('addProduct')
   @yield('Category')
   @yield('Product')
+  @yield('Dashboard')
 
 
 

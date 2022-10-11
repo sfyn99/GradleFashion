@@ -64,9 +64,17 @@ class AdminController extends Controller
               $req->session()->flash('error','invalid credentials');
               return redirect('login');
           }
+        
 
         
 
+      }
+      public function dashboardfunc(){
+
+        return view('admin.Dashboard');
+      }
+      public function bashboardfunc(){
+        return view('admin.Dashboard');
       }
        
     }   
