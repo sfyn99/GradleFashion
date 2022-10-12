@@ -32,5 +32,11 @@ return view('addCategory');
       return view ('category',compact('category'));
    }
  
-
+   public function deleteCategoryfunc($id){
+      $category= category::find($id);
+      $category->delete();
+      return redirect()->back();
+      
+      }
+    
 }

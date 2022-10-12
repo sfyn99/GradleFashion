@@ -30,4 +30,13 @@ class ProductController extends Controller
    $Product = Product::all();
    return view ('Product.Product',compact('Product'));
 }
+
+public function deleteProductfunc($id){
+  $product= product::find($id);
+  $product->delete();
+  return redirect()->back();
+  
+  }
+
+
 }

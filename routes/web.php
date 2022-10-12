@@ -35,16 +35,13 @@ Route::post('addProductPost',[ProductController::class,'addProductPostfunc']);
 Route::get('register',[AdminController::class,'registerfunc']);
 Route::get('showProduct',[ProductController::class,'showProductfunc']);
 Route::get('login',[AdminController::class,'loginfunc']);
+Route::get('deleteProduct/{id}',[ProductController::class,'deleteProductfunc']);
+Route::get('categoryDelete/{id}',[CategoryController::class,'deleteCategoryfunc']);
+
 Route::group(['middleware'=>'admi_auth'],function(){
 
 
-    Route::get('Dashboard',[AdminController::class,'dashboardfunc']);
-    Route::get('addCategory',[CategoryController::class,'addCategoryfunc']);
-    Route::get('Category',[CategoryController::class,'CategoryViewfunc']);
-   
-    Route::get('addProduct',[ProductController::class,'addProductfunc']);   
-    Route::get('showCategory',[CategoryController::class,'showCategoryfunc']);
-
+    
 
 
 });
@@ -52,3 +49,9 @@ Route::group(['middleware'=>'admi_auth'],function(){
 Route::post('doregister',[AdminController::class,'doregister']);
 Route::post('admin/auth',[AdminController::class,'auth'])->name('admin.auth');
 
+Route::get('Dashboard',[AdminController::class,'dashboardfunc']);
+    Route::get('addCategory',[CategoryController::class,'addCategoryfunc']);
+    Route::get('Category',[CategoryController::class,'CategoryViewfunc']);
+   
+    Route::get('addProduct',[ProductController::class,'addProductfunc']);   
+    Route::get('showCategory',[CategoryController::class,'showCategoryfunc']);

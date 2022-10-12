@@ -31,6 +31,7 @@
 <td>{{$p->productPrice}}</td>
 <td>{{$p->productDecript}}</td>
 <td>{{$p->categoryId}}</td>
+<td><a href="deleteProduct/{{$p->id}}">DELETE</a></td>
 </tr>
 @endforeach
 </table>
