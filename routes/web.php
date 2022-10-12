@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Models\admin;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
@@ -34,7 +35,7 @@ Route::post('addProductPost',[ProductController::class,'addProductPostfunc']);
 Route::get('register',[AdminController::class,'registerfunc']);
 Route::get('showProduct',[ProductController::class,'showProductfunc']);
 Route::get('login',[AdminController::class,'loginfunc']);
-Route::group(['middleware'=>['web']],function(){
+Route::group(['middleware'=>'admi_auth'],function(){
 
 
     Route::get('Dashboard',[AdminController::class,'dashboardfunc']);

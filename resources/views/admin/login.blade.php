@@ -21,7 +21,7 @@
                             <button type="submit"class='form-control btn btn-primary' class="site-btn register-btn">REGISTER</button>
                         </form>
                     <center style="color:red;">
-                        {{session('error')}}
+                        {{session('errors')}}
                     </center>  
 
             </div>
