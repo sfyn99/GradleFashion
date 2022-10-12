@@ -32,7 +32,7 @@ class AdminController extends Controller
         $a->save();
         
         
-        return redirect('register');
+        return redirect('Dashboard');
       }}
       public function registerfunc() {
 
@@ -76,7 +76,11 @@ class AdminController extends Controller
       public function bashboardfunc(){
         return view('admin.Dashboard');
       }
-       
+      public function logout(Request $request) {
+        $request->session()->flush();
+        return redirect('login');
+        
+    }
     }   
        
        

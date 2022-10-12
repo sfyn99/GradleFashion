@@ -12,6 +12,10 @@
 
 </head>
 <body>
+<center>
+<h1>Category</h1>
+</center>
+<button style="border-radius:10px; float:right;" class="btn btn-primary"><a href="addCategory" style="text-decoration:none;color:white;">ADD CATEGORY</a></button>
     
 <table class="table">
     <tr>

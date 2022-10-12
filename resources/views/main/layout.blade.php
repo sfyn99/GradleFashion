@@ -16,20 +16,22 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+          <a class="nav-link" href="Dashboard">Dashboard</a>
+        </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="showProduct">Product</a>
+          <a class="nav-link" aria-current="page" href="showProduct">Product</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="showCategory">Categories</a>
         </li>
+        @if(session()->has('Admin_login'))
         <li class="nav-item">
-          <a class="nav-link" href="register">Register/Login</a>
-        </li>    
-         <li class="nav-item">
-          <a class="nav-link" href="#"></a>
+          <a class="nav-link" href="logout">Logout</a>
         </li>
+        @endif
         
-      <form class="d-flex" role="search">
+      <form  class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
@@ -41,7 +43,6 @@
   @yield('addCategory')
   @yield('register')
   @yield('login')
-
   @yield('addProduct')
   @yield('Category')
   @yield('Product')

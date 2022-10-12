@@ -17,11 +17,16 @@
                             <div class="group-input">
                             <br>
                                 <input name='password'class='form-control' placeholder='Enter Password' type="text" id="con-pass">
-                            </div> <br>
-                            <button type="submit"class='form-control btn btn-primary' class="site-btn register-btn">REGISTER</button>
+                            </div><br>
+                            <center>
+                            <a href="register">Don't have an account</a>
+                            </center>
+                            <br>
+                            <button type="submit"class='form-control btn btn-primary' class="site-btn register-btn">Login</button>
                         </form>
-                    <center style="color:red;">
-                        {{session('errors')}}
+                        <br>
+                    <center style="background-color:red;color:white;">
+                       <b> {{session('error')}}</b>
                     </center>  
 
             </div>

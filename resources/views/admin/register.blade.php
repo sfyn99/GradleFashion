@@ -22,13 +22,17 @@
                             </div> <br>
                             <div class="group-input">
                                 <input name='confirm_password' class='form-control'placeholder='Confirm Password' type="text" id="con-pass">
-                            </div>
+                            </div><br>
+                            <center>
+                            <a href="login">Already have an account?</a>
+                            </center>
                             <br>
                             <button type="submit"class='form-control btn btn-primary' class="site-btn register-btn">REGISTER</button>
+                       
                         </form>
                         @if($errors->any())
                         @foreach($errors->all() as $err)
-                    <div>{{$err}}</div>
+                    <div style="background-color:red;color:white;">{{$err}}</div>
                         @endforeach
                         @endif
                         @endsection

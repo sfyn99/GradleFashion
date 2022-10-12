@@ -14,7 +14,10 @@
 
 </head>
 <body>
-    
+    <center>
+    <u><h1>Products</h1></u>
+    </center>
+    <button style="border-radius:10px; float:right;" class="btn btn-primary"><a href="addProduct" style="text-decoration:none;color:white;">ADD PRODUCT</a></button>
 <table class="table">
     <tr>
     <th>productId</th>
@@ -34,6 +37,10 @@
 <td><a href="deleteProduct/{{$p->id}}">DELETE</a></td>
 </tr>
 @endforeach
+
+    
+
+
 </table>
 </body>
 </html>
