@@ -61,7 +61,7 @@ class AdminController extends Controller
         }
 
           else{
-              $req->session()->flash('error','invalid credentials');
+              $req->session()->flash('errors','invalid credentials');
               return redirect('login');
           }
         

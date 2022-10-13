@@ -1,4 +1,7 @@
 @extends('main.layout')
+@section('registertitle')
+<title>Register</title>
+@endsection
 @section('register')
 
                         <div class="container">
@@ -18,17 +21,21 @@
                             </div>
                             <div class="group-input">
                             <br>
-                                <input name='password'class='form-control' placeholder='Enter Password' type="text" id="con-pass">
+                                <input name='password'class='form-control' placeholder='Enter Password' type="password"   id="myInput">
                             </div> <br>
                             <div class="group-input">
-                                <input name='confirm_password' class='form-control'placeholder='Confirm Password' type="text" id="con-pass">
+                                <input name='confirm_password' class='form-control'placeholder='Confirm Password' type="password" id="myInput">
                             </div><br>
+                            
                             <center>
                             <a href="login">Already have an account?</a>
                             </center>
                             <br>
                             <button type="submit"class='form-control btn btn-primary' class="site-btn register-btn">REGISTER</button>
-                       
+
+
+
+</script>
                         </form>
                         @if($errors->any())
                         @foreach($errors->all() as $err)
@@ -41,3 +48,4 @@
             </div>
         </div>
     </div>
+    

@@ -1,4 +1,7 @@
 @extends('main.layout')
+@section('logintitle')
+<title>Login</title>
+@endsection
 @section('login')
 
                         <div class="container">
@@ -26,7 +29,7 @@
                         </form>
                         <br>
                     <center style="background-color:red;color:white;">
-                       <b> {{session('error')}}</b>
+                       <b>{{session('errors')}}</b>
                     </center>  
 
             </div>

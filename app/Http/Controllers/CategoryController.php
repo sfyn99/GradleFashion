@@ -9,11 +9,11 @@ class CategoryController extends Controller
 {
    public function CategoryViewfunc(){
 
-      return view('Category');
+      return view('Category.Category');
    }
    public function addCategoryfunc(){
 
-return view('addCategory');
+return view('Category.addCategory');
 
 
 
@@ -29,7 +29,7 @@ return view('addCategory');
    public function showCategoryfunc(){
 
       $category = category::all();
-      return view ('category',compact('category'));
+      return view ('Category.category',compact('category'));
    }
  
    public function deleteCategoryfunc($id){

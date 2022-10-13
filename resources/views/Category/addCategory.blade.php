@@ -1,4 +1,7 @@
 @extends('main.layout')
+@section('addcattitle')
+<title>Add Category</title>
+@endsection
 @section('addCategory')
 <!DOCTYPE html>
 <html lang="en">

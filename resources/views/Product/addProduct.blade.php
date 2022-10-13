@@ -1,4 +1,7 @@
 @extends('main.layout')
+@section('addprotitle')
+<title>Add Product</title>
+@endsection
 @section('addProduct')
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +17,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <form method='POST' action="addProductPost">
+                <form method='POST' action="addProductPost" enctype="multipart/form-data">
                 @csrf    
                 <center>
                         <h1>Add Product</h1>
@@ -26,6 +29,8 @@
                     <br><br>
                     <input name='productDescript' class='form-control' type="text" placeholder='Add productDescript'>
                     <br><br>
+                    <input name='image' class='form-control' type="file" placeholder='Add productImage'>
+
                     <select name="categoryId">
                         @foreach($category as $c)
                     <option value="{{$c->id}}">{{$c->categoryName}}</option>   
