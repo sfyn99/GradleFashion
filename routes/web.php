@@ -47,7 +47,7 @@ Route::group(['middleware'=>'admin_auth'],function(){
     Route::get('addProduct',[ProductController::class,'addProductfunc']);   
     Route::get('showCategory',[CategoryController::class,'showCategoryfunc']);
     Route::get('logout',[AdminController::class,'logout']);
-
+    Route::get('/subProduct/{id}',[ProductController::class,'fetch_subProduct']);
 
 
 });

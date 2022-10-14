@@ -30,6 +30,7 @@
                     <input name='productDescript' class='form-control' type="text" placeholder='Add productDescript'>
                     <br><br>
                     <input name='image' class='form-control' type="file" placeholder='Add productImage'>
+                    <input multiple name='subProductImageInput[]'  class='form-control' type="file" placeholder='Add Multiple productImage'>
 
                     <select name="categoryId">
                         @foreach($category as $c)

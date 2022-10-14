@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\subProduct;
 
 use App\Models\product;
 use App\Models\category;
@@ -34,6 +35,18 @@ $Product->productImage=$fileimage;
 
 }
    $Product->save();
+   
+   $subProductImage = $r->file("subProductImageInput");
+   foreach($subProductImage as $sub)
+   {
+       $ext = rand().".".$sub->getClientOriginalName();
+       $sub->move("subProductImages/",$ext);
+
+       Product::create([
+           'subProductImage'=>$ext,
+           'productId'=>$Product->id
+       ]);
+   }
    return redirect('showProduct');
   }
   public function showProductfunc(){
@@ -48,6 +61,13 @@ public function deleteProductfunc($id){
   return redirect()->back();
   
   }
+  public function fetch_subcategory($id)
+    {
+        $Product = products::find($id);
+        $pro_id = $Product->id;
+     $subProduct = products::where("productId",$pro_id)->get();
+     return View("subProduct",compact("subProduct","Product"));   
+    }
 
 
 }
