@@ -1,8 +1,8 @@
 @extends('main.layout')
-@section('registertitle')
+@section('title')
 <title>Register</title>
 @endsection
-@section('register')
+@section('content')
 
                         <div class="container">
         <div class="row">

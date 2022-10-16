@@ -1,8 +1,8 @@
 @extends('main.layout')
-@section('protitle')
+@section('title')
 <title>Products</title>
 @endsection
-@section('Product')
+@section('content')
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +38,7 @@
 <td>{{$p->productPrice}}</td>
 <td>{{$p->productDecript}}</td>
 <td>{{$p->categoryId}}</td>
-<td><img src="image/{{$p->productImage}}" height="70px" width="70px" alt=""></td>
+<td><a href="/subProduct/{{$p->id}}"><img src="image/{{$p->productImage}}" height="70px" width="70px" alt=""></a></td>
 <td><a href="deleteProduct/{{$p->id}}">DELETE</a></td>
 </tr>
 @endforeach

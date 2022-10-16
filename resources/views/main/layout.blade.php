@@ -3,13 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    @yield('registertitle')
-    @yield('addprotitle')
-    @yield('protitle')
-    @yield('addcattitle')
-    @yield('cattitle')
-    @yield('logintitle')
-    @yield('dashtitle')
+    @yield('title')
+   
 
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -48,13 +43,8 @@
 </nav>
 
   <!-- Navbar End  -->
-  @yield('addCategory')
-  @yield('register')
-  @yield('login')
-  @yield('addProduct')
-  @yield('Category')
-  @yield('Product')
-  @yield('Dashboard')
+  @yield('content')
+
 
 
 

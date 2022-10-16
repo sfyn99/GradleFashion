@@ -1,8 +1,8 @@
 @extends('main.layout')
-@section('dashtitle')
+@section('title')
 <title>Dashboard</title>
 @endsection
-@section('Dashboard')
+@section('content')
 <center>
 <h1>Admin Dashboard</h1>
 </center>

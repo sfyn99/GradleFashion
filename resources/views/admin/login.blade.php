@@ -1,8 +1,8 @@
 @extends('main.layout')
-@section('logintitle')
+@section('title')
 <title>Login</title>
 @endsection
-@section('login')
+@section('content')
 
                         <div class="container">
         <div class="row">

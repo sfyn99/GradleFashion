@@ -30,7 +30,7 @@ Route::post('addcategoryPost',[CategoryController::class,'addCategoryPostfunc'])
 
 
 
-Route::post('addProductPost',[ProductController::class,'addProductPostfunc']);
+
 Route::get('register',[AdminController::class,'registerfunc']);
 
 Route::get('login',[AdminController::class,'loginfunc']);
@@ -39,7 +39,7 @@ Route::get('categoryDelete/{id}',[CategoryController::class,'deleteCategoryfunc'
 
 Route::group(['middleware'=>'admin_auth'],function(){
 
-
+    Route::post('addProductPost',[ProductController::class,'addProductPostfunc']);
     Route::get('Dashboard',[AdminController::class,'dashboardfunc']);
     Route::get('addCategory',[CategoryController::class,'addCategoryfunc']);
     Route::get('Category',[CategoryController::class,'CategoryViewfunc']);

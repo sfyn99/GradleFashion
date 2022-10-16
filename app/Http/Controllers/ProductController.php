@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\subProduct;
-
 use App\Models\product;
-use App\Models\category;
-
 use Illuminate\Http\Request;
-
+use App\Models\category;
 class ProductController extends Controller
 {
  public function addProductfunc(){
@@ -19,22 +16,22 @@ class ProductController extends Controller
 
    $Product=new Product();
    
-   $Product->productName=$r->productName;
-   $Product->productPrice=$r->productPrice;
-   $Product->productDecript=$r->productDescript;
-   $Product->categoryId=$r->categoryId;
-   if($r->hasfile('image'))
-{
-
-$file = $r->file('image');
-$ext=$file->getClientOriginalExtension();
-$fileimage=time().".".$ext;
-$file->move('image',$fileimage);
-$Product->productImage=$fileimage;
- 
-
-}
-   $Product->save();
+   $productName=$r->productName;
+   $productPrice=$r->productPrice;
+   $productDescript=$r->productDescript;
+  $categoryId=$r->categoryId;
+   
+   $productImage = $r->file("image");
+        $ext = rand().".".$productImage->getClientOriginalName();
+        $productImage->move("image/",$ext);
+        $Product=product::create([
+            'productName'=>$productName,
+            'productPrice'=>$productPrice,
+            'productDecript'=>$productDescript,
+            'categoryId'=>$categoryId,
+            'productImage'=>$ext
+        ]);
+  
    
    $subProductImage = $r->file("subProductImageInput");
    foreach($subProductImage as $sub)
@@ -42,7 +39,7 @@ $Product->productImage=$fileimage;
        $ext = rand().".".$sub->getClientOriginalName();
        $sub->move("subProductImages/",$ext);
 
-       Product::create([
+       subProduct::create([
            'subProductImage'=>$ext,
            'productId'=>$Product->id
        ]);
@@ -61,12 +58,12 @@ public function deleteProductfunc($id){
   return redirect()->back();
   
   }
-  public function fetch_subcategory($id)
+  public function fetch_subProduct($id)
     {
-        $Product = products::find($id);
+        $Product = product::find($id);
         $pro_id = $Product->id;
-     $subProduct = products::where("productId",$pro_id)->get();
-     return View("subProduct",compact("subProduct","Product"));   
+     $subProduct = subProduct::where("productId",$pro_id)->get();
+     return View("Product.subProduct",compact("subProduct","Product"));   
     }
 
 
