@@ -36,7 +36,6 @@ Route::get('register',[AdminController::class,'registerfunc']);
 Route::get('login',[AdminController::class,'loginfunc']);
 Route::get('deleteProduct/{id}',[ProductController::class,'deleteProductfunc']);
 Route::get('categoryDelete/{id}',[CategoryController::class,'deleteCategoryfunc']);
-
 Route::group(['middleware'=>'admin_auth'],function(){
 
     Route::post('addProductPost',[ProductController::class,'addProductPostfunc']);
@@ -47,9 +46,7 @@ Route::group(['middleware'=>'admin_auth'],function(){
     Route::get('addProduct',[ProductController::class,'addProductfunc']);   
     Route::get('showCategory',[CategoryController::class,'showCategoryfunc']);
     Route::get('logout',[AdminController::class,'logout']);
-    Route::get('/subProduct/{id}',[ProductController::class,'fetch_subProduct']);
-
-
+    Route::get('/subProduct/{id}',[ProductController::class,'fetch_subProduct']);   
 });
 
 Route::post('doregister',[AdminController::class,'doregister']);
